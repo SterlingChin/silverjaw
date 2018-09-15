@@ -1,0 +1,18 @@
+.header-body {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 35px;
+    line-height: 75px;
+    margin: 0 0 0 15px;
+}
+
+svg {
+    height: 50px;
+    margin: 15px;
+    fill: #000000;
+}
