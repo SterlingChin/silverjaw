@@ -16,3 +16,19 @@ svg {
     margin: 15px;
     fill: #000000;
 }
+
+.header-body-mobile {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 125px;
+}
+
+.title-mobile {
+    font-size: 35px;
+    line-height: 50px;
+    margin: auto;
+}
+
+.social-mobile {
+
+}

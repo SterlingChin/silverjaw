@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import './App.css';
+import { isMobile } from './utils/Browsers';
 import Header from './Header/Header';
 import Silverjaw from './Silverjaw/Silverjaw';
 import IAmFed from './IAmFed/IAmFed';
-import { isMobile } from './utils/Browsers';
+import About from './About/About';
+import './App.css';
+import Footer from './Footer/Footer';
 
 class App extends Component {
   render() {
-    console.log(isMobile);
     if (isMobile) {
       return (
         <div className="App">
             <Header />
             <IAmFed />
             <Silverjaw />
+            <About />
+            <Footer />
         </div>
       )
     }
@@ -24,6 +27,10 @@ class App extends Component {
           <Silverjaw />
           <IAmFed />
         </div>
+        <div className='body'>
+          <About />
+        </div>
+        <Footer />
       </div>
     );
   }

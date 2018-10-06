@@ -8,5 +8,5 @@
 .body {
   display: flex;
   width: 900px;
-  margin: auto;
+  margin: 0 auto 15px;
 }
