@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { COLORS } from '../utils/constants'
 import { isMobile } from '../utils/Browsers';
-
-const colors = {
-    LINK: '#F2501B',
-    LINK_HOVER: '#D34317'
-}
 
 const messages = [
     'Software Engineer with 3 years experience currently at Workfront',
@@ -41,13 +37,13 @@ const Message = styled('div')`
     padding: 5px;
     margin: 0 0 5px 0;
     a {
-        color: ${colors.LINK};
+        color: ${COLORS.LINK};
         text-decoration: none;
         :visited {
-            color: ${colors.LINK};
+            color: ${COLORS.LINK};
         }
         :hover {
-            color: ${colors.LINK_HOVER}
+            color: ${COLORS.LINK_HOVER}
         }
     }
 `
