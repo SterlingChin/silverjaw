@@ -1,79 +1,77 @@
 import React from 'react';
+import styled from '@emotion/styled'
 import { TwitterSvg } from '../Images/TwitterSvg';
 import { GithubSvg } from '../Images/GithubSvg';
 import { LinkedInSvg } from '../Images/LinkedInSvg';
 import { EmailSvg } from '../Images/EmailSvg';
 import { isMobile } from '../utils/Browsers';
-import './Header.css';
+
+const socialLinks = {
+    twitter: 'https://twitter.com/SilverJaw82',
+    github: 'https://github.com/SterlingChin',
+    linkedIn: 'https://www.linkedin.com/in/sterlingchin/',
+    email: 'mailto:sterling.chin@gmail.com',
+}
+
+const HeaderContainer = styled('div')`
+    height: ${({mobile}) => mobile ? '150px' :'75px'};
+    width: 100%;
+    display: flex;
+    justify-content: ${({mobile}) => mobile ? 'flex-start' :'space-between'};
+`
+HeaderContainer.displayName = 'HeaderContainer'
+
+const Title = styled('span')`
+    font-size: 35px;
+    line-height: ${({mobile}) => mobile ? '50px' :'75px'};
+    margin: ${({mobile}) => mobile ? 'auto' :'0 0 0 15px'};
+`
+Title.displayName = 'Title'
+
+const SocialLinks = styled('div')`
+    svg {
+    height: 50px;
+    margin: 15px;
+    fill: #000000;
+}
+`
+SocialLinks.displayName = 'SocialLinks'
+
+
 
 const Header = () => {
-    if (isMobile) {
-        return (
-            <div className="header-body-mobile">
-                <span className="title-mobile">Sterling Chin</span>
-                <div className="social-mobile" >
-                    <a
-                        href='https://twitter.com/SilverJaw82'
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        <TwitterSvg />
-                    </a>
-                    <a
-                        href='https://github.com/SterlingChin'
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        <GithubSvg />
-                    </a>
-                    <a
-                        href='https://www.linkedin.com/in/sterlingchin/'
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        <LinkedInSvg />
-                    </a>
-                    <a
-                        href='mailto:sterling.chin@gmail.com'
-                    >
-                        <EmailSvg />
-                    </a>
-                </div>
-            </div>
-        )
-    }
     return (
-        <div className="header-body">
-            <span className="title">Sterling Chin</span>
-            <div className="social" >
+        <HeaderContainer mobile={isMobile}>
+            <Title mobile={isMobile}>Sterling Chin</Title>
+            <SocialLinks className="social" >
                 <a
-                    href='https://twitter.com/SilverJaw82'
+                    href={socialLinks.twitter}
                     rel="noopener noreferrer"
                     target="_blank"
                 >
                     <TwitterSvg />
                 </a>
                 <a
-                    href='https://github.com/SterlingChin'
+                    href={socialLinks.github}
                     rel="noopener noreferrer"
                     target="_blank"
                 >
                     <GithubSvg />
                 </a>
                 <a
-                    href='https://www.linkedin.com/in/sterlingchin/'
+                    href={socialLinks.linkedIn}
                     rel="noopener noreferrer"
                     target="_blank"
                 >
                     <LinkedInSvg />
                 </a>
                 <a
-                    href='mailto:sterling.chin@gmail.com'
+                    href={socialLinks.email}
                 >
                     <EmailSvg />
                 </a>
-            </div>
-        </div>
+            </SocialLinks>
+        </HeaderContainer>
     )
 };
 
