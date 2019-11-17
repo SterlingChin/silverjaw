@@ -14,17 +14,17 @@ const socialLinks = {
 }
 
 const HeaderContainer = styled('div')`
-    height: ${({mobile}) => mobile ? '150px' :'75px'};
+    height: ${({isMobile}) => isMobile ? '150px' :'75px'};
     width: 100%;
     display: flex;
-    justify-content: ${({mobile}) => mobile ? 'flex-start' :'space-between'};
+    justify-content: ${({isMobile}) => isMobile ? 'flex-start' :'space-between'};
 `
 HeaderContainer.displayName = 'HeaderContainer'
 
 const Title = styled('span')`
     font-size: 35px;
-    line-height: ${({mobile}) => mobile ? '50px' :'75px'};
-    margin: ${({mobile}) => mobile ? 'auto' :'0 0 0 15px'};
+    line-height: ${({isMobile}) => isMobile ? '50px' :'75px'};
+    margin: ${({isMobile}) => isMobile ? 'auto' :'0 0 0 15px'};
 `
 Title.displayName = 'Title'
 
@@ -41,7 +41,7 @@ SocialLinks.displayName = 'SocialLinks'
 
 const Header = () => {
     return (
-        <HeaderContainer mobile={isMobile}>
+        <HeaderContainer isMobile={isMobile}>
             <Title mobile={isMobile}>Sterling Chin</Title>
             <SocialLinks className="social" >
                 <a
