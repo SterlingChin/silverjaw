@@ -11,35 +11,32 @@ import Footer from './Footer/Footer';
 
 const AppContainer = styled('div')`
     background-color: ${COLORS.MAIN_BACKGROUND};
+    font-family: 'Source Code Pro', monospace;
 `
 AppContainer.displayName = 'AppContainer'
+
+const BodyItem = styled('div')`
+  display: flex;
+  width: 900px;
+  margin: 0 auto 15px;
+  height: auto;
+`
+BodyItem.displayName = 'BodyItem'
 
 
 class App extends Component {
   render() {
-    if (isMobile) {
-      return (
-        <div className="App">
-            <Header />
-            <SoftwareEngineer />
-            <Silverjaw />
-            <About />
-            <Footer />
-        </div>
-      )
-    }
     return (
-      <div className="App">
+      <AppContainer>
         <Header />
-        <div className='body'>
-          <Silverjaw />
+        <BodyItem>
           <SoftwareEngineer />
-        </div>
-        <div className='body'>
+        </BodyItem>
+        <BodyItem>
           <About />
-        </div>
+        </BodyItem>
         <Footer />
-      </div>
+      </AppContainer>
     );
   }
 }
