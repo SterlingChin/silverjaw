@@ -4,7 +4,6 @@ import { isMobile } from '../utils/Browsers';
 
 const SJLogo = styled('img')`
     height: ${({isMobile}) => isMobile ? '150px' :'350px'};
-    width: ${({isMobile}) => isMobile ? '95%' :'auto'};
     margin: 25px;
 `
 SJLogo.displayName = 'SJLogo'
