@@ -10,6 +10,8 @@ import Footer from './Footer/Footer';
 
 const AppContainer = styled('div')`
     background-color: ${COLORS.MAIN_BACKGROUND};
+    height: 100vh;
+    width: 100vw;
     font-family: 'Source Code Pro', monospace;
 `
 AppContainer.displayName = 'AppContainer'
