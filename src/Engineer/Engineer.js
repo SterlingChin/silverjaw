@@ -4,10 +4,16 @@ import Silverjaw from '../Silverjaw/Silverjaw';
 import { isMobile } from '../utils/Browsers';
 
 const EngineerContainer = styled('div')`
-    display: flex;
+    display: ${({isMobile}) => isMobile ? 'block' :'flex'};
+    height: 350px;
     filter: drop-shadow(0 1px 2px rgba(0, 35, 64, 0.32));
 `
 EngineerContainer.displayName = 'EngineerContainer'
+
+const SilverjawContainer = styled('div')`
+    width: 350px;
+`
+SilverjawContainer.displayName = 'SilverjawContainer'
 
 const Title = styled('div')`
     font-size: ${({isMobile}) => isMobile ? '1.5em' :'2em'};
@@ -16,16 +22,15 @@ const Title = styled('div')`
     height: 50px;
     line-height: 50px;
     align-self: center;
-    margin: ${({isMobile}) => isMobile ? '15px auto' :'0 0 100px 0'};
     filter: drop-shadow(0 1px 2px rgba(0, 35, 64, 0.32));
 `
 Title.displayName = 'Title'
 
-
-
 const SoftwareEngineer = () => (
     <EngineerContainer isMobile={isMobile}>
-        <Silverjaw />
+        <SilverjawContainer isMobile={isMobile}>
+            <Silverjaw />
+        </SilverjawContainer>
         <Title>Software Engineer</Title>
     </EngineerContainer>
 );
