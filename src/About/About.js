@@ -35,7 +35,6 @@ AboutContainer.displayName = 'AboutContainer';
 
 const SectionTitle = styled('div')`
     font-size: 24px;
-    width: 100%;
     margin: ${({isMobile}) => isMobile ? '5px' :'0px'};
     filter: drop-shadow(0 1px 2px rgba(0, 35, 64, 0.32));
 `
@@ -44,7 +43,6 @@ SectionTitle.displayName = 'SectionTitle';
 const Message = styled('div')`
     font-size: ${({isMobile}) => isMobile ? '14px' :'16px'};
     line-height: 18px;
-    width: 100%;
     padding: 5px;
     margin: 0 0 8px 0;
     filter: drop-shadow(0 1px 2px rgba(0, 35, 64, 0.32));

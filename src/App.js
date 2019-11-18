@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import { COLORS } from './utils/constants'
 import { isMobile } from './utils/Browsers';
 import Header from './Header/Header';
-import Silverjaw from './Silverjaw/Silverjaw';
 import SoftwareEngineer from './Engineer/Engineer';
 import About from './About/About';
 import './App.css';
@@ -17,7 +16,7 @@ AppContainer.displayName = 'AppContainer'
 
 const BodyItem = styled('div')`
   display: flex;
-  width: 900px;
+  width: ${({isMobile}) => isMobile ? '100vw' :'900px'};
   margin: 0 auto 15px;
   height: auto;
 `
@@ -29,10 +28,10 @@ class App extends Component {
     return (
       <AppContainer>
         <Header />
-        <BodyItem>
+        <BodyItem isMobile={isMobile}>
           <SoftwareEngineer />
         </BodyItem>
-        <BodyItem>
+        <BodyItem isMobile={isMobile}>
           <About />
         </BodyItem>
         <Footer />
