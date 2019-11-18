@@ -6,15 +6,21 @@ import { isMobile } from '../utils/Browsers';
 const messages = [
     'Software Engineer with 3 years experience currently at Workfront',
     'Tech Stack: React w/ Hooks & Redux, Javascript, Jest & Enzyme, Amazon AWS, Gitlab pipelines, and styled components (Emotion)',
-    'Professional Goals: Mentor new engineers, write clean & testable code (I strive for 100% test coverage), and continue to level up my craft',
     'Professional Interests: TDD (Test Driven Developement), React.js, Vue.js, pixel match mocks, and speaking at conferences',
+    'Professional Goals: Mentor new engineers, write clean & testable code (I strive for 100% test coverage), and continue to level up my craft',
     'Interests: Snowboarding, Hiking, Motorcycles, Tattoos, Space, Mechanical Keyboards, and of course my amazing family'
 ];
 const links = {
-    'Resume': 'https://drive.google.com/file/d/1zzO7s2kteazY5E3R3Xzo_5a8G7E_0--6/view?usp=sharing',
-    'Shakespear Review': 'https://sterling-chin-podium-challenge-home.now.sh/',
-    'DevMountain promo': 'https://www.youtube.com/watch?v=QlaOlvteRec',
-    'Christmas Tree (pure HTML/CSS)': 'https://christmastree.now.sh',
+    'Resume': {
+        demo:'https://drive.google.com/file/d/1zzO7s2kteazY5E3R3Xzo_5a8G7E_0--6/view?usp=sharing'
+    },
+    'Shakespear Review': {
+        github: 'https://github.com/SterlingChin/podium',
+        demo: 'https://sterling-chin-podium-challenge-home.now.sh/'},
+    'Christmas Tree': {
+        github: 'https://github.com/SterlingChin/christmasTree',
+        demo: 'https://christmastree.now.sh'},
+    'DevMountain promo': 'https://youtu.be/QlaOlvteRec?t=47',
 };
 
 const AboutContainer = styled('div')`
@@ -55,6 +61,12 @@ const Message = styled('div')`
 `
 Message.displayName = 'Message';
 
+const Link = styled('a')`
+
+`
+Link.displayName = 'Link'
+
+
 const About = () => (
     <AboutContainer isMobile={isMobile}>
         <SectionTitle isMobile={isMobile}>
@@ -69,11 +81,15 @@ const About = () => (
             Links:
         </SectionTitle>
         {Object.keys(links).map(key => {
+            const hasGithubLink = !!links[key].github
             return (
                 <Message key={key}>
-                    <a href={links[key]} target='_blank' rel='noopener noreferrer'>
+                    <Link href={links[key].demo} target='_blank' rel='noopener noreferrer'>
                         {`${key}`}
-                    </a>
+                    </Link>
+                    {hasGithubLink && <Link href={links[key].github} target='_blank' rel='noopener noreferrer'>
+                        (Repo)
+                    </Link>}
                 </Message>
             )
         })}
