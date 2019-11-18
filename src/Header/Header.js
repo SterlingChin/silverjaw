@@ -25,6 +25,7 @@ const Title = styled('span')`
     font-size: 35px;
     line-height: ${({isMobile}) => isMobile ? '50px' :'75px'};
     margin: ${({isMobile}) => isMobile ? 'auto' :'0 0 0 15px'};
+    filter: drop-shadow(0 1px 2px rgba(0, 35, 64, 0.32));
 `
 Title.displayName = 'Title'
 
@@ -33,7 +34,8 @@ const SocialLinks = styled('div')`
     height: 50px;
     margin: 15px;
     fill: #000000;
-}
+    filter: drop-shadow(0 1px 2px rgba(0, 35, 64, 0.32));
+    }
 `
 SocialLinks.displayName = 'SocialLinks'
 
