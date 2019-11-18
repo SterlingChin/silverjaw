@@ -18,7 +18,7 @@ const socialLinks = {
 const HeaderContainer = styled('div')`
     height: ${({isMobile}) => isMobile ? '150px' :'75px'};
     width: 100%;
-    display: flex;
+    display: ${({isMobile}) => isMobile ? 'block' :'flex'};
     justify-content: ${({isMobile}) => isMobile ? 'flex-start' :'space-between'};
 `
 HeaderContainer.displayName = 'HeaderContainer'
