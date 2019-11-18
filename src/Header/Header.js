@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled'
+import { Resume } from '../Images/Resume';
 import { TwitterSvg } from '../Images/TwitterSvg';
 import { GithubSvg } from '../Images/GithubSvg';
 import { LinkedInSvg } from '../Images/LinkedInSvg';
@@ -7,6 +8,7 @@ import { EmailSvg } from '../Images/EmailSvg';
 import { isMobile } from '../utils/Browsers';
 
 const socialLinks = {
+    resume: 'https://drive.google.com/file/d/1zzO7s2kteazY5E3R3Xzo_5a8G7E_0--6/view',
     twitter: 'https://twitter.com/SilverJaw82',
     github: 'https://github.com/SterlingChin',
     linkedIn: 'https://www.linkedin.com/in/sterlingchin/',
@@ -39,6 +41,13 @@ const SocialLinks = styled('div')`
 `
 SocialLinks.displayName = 'SocialLinks'
 
+const ResumeIcon = styled('a')`
+    svg {
+        height: 43px;
+        margin: 0 14px 18px 0;
+    }
+`
+ResumeIcon.displayName = 'ResumeIcon'
 
 
 const Header = () => {
@@ -46,6 +55,13 @@ const Header = () => {
         <HeaderContainer isMobile={isMobile}>
             <Title mobile={isMobile}>Sterling Chin</Title>
             <SocialLinks className="social" >
+                <ResumeIcon
+                    href={socialLinks.resume}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    <Resume />
+                </ResumeIcon>
                 <a
                     href={socialLinks.twitter}
                     rel="noopener noreferrer"
