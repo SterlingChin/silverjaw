@@ -14,12 +14,25 @@ const links = {
     'Resume': {
         demo:'https://drive.google.com/file/d/1zzO7s2kteazY5E3R3Xzo_5a8G7E_0--6/view?usp=sharing'
     },
+    'Silverjaw.com': {
+        github: 'https://github.com/SterlingChin/silverjaw',
+    },
     'Shakespear Review': {
         github: 'https://github.com/SterlingChin/podium',
-        demo: 'https://sterling-chin-podium-challenge-home.now.sh/'},
+        demo: 'https://sterling-chin-podium-challenge-home.now.sh/'
+    },
+    'TheSmartPiggy.com': {
+        github: 'https://github.com/SterlingChin/smartpiggy',
+        demo: 'https://thesmartpiggy.com'
+    },
+    'SherlingChen.com': {
+        github: 'https://github.com/SterlingChin/sherlingchen',
+        demo: 'https://sherlingchen.com'
+    },
     'Christmas Tree': {
         github: 'https://github.com/SterlingChin/christmasTree',
-        demo: 'https://christmastree.now.sh'},
+        demo: 'https://christmastree.now.sh'
+    },
     'DevMountain promo': 'https://youtu.be/QlaOlvteRec?t=47',
 };
 
