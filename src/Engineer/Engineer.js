@@ -31,7 +31,7 @@ const SoftwareEngineer = () => (
         <SilverjawContainer isMobile={isMobile}>
             <Silverjaw />
         </SilverjawContainer>
-        <Title>Software Engineer</Title>
+        <Title>Javascript Engineer</Title>
     </EngineerContainer>
 );
 

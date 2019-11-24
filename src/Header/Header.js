@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from '@emotion/styled'
+import { COLORS, CONTAINERS } from '../utils/constants'
 import { Resume } from '../Images/Resume';
 import { TwitterSvg } from '../Images/TwitterSvg';
 import { GithubSvg } from '../Images/GithubSvg';
 import { LinkedInSvg } from '../Images/LinkedInSvg';
 import { EmailSvg } from '../Images/EmailSvg';
 import { isMobile } from '../utils/Browsers';
+
+const { HEADER } = CONTAINERS
 
 const socialLinks = {
     resume: 'https://drive.google.com/file/d/1zzO7s2kteazY5E3R3Xzo_5a8G7E_0--6/view',
@@ -16,10 +19,11 @@ const socialLinks = {
 }
 
 const HeaderContainer = styled('div')`
-    height: ${({isMobile}) => isMobile ? '150px' :'75px'};
+    height: ${({isMobile}) => isMobile ? HEADER.MOBILE : HEADER.DESKTOP};
     width: 100%;
     display: ${({isMobile}) => isMobile ? 'block' :'flex'};
     justify-content: ${({isMobile}) => isMobile ? 'flex-start' :'space-between'};
+    background-color: ${COLORS.HEADER_FOOTER_BACKGROUND};
 `
 HeaderContainer.displayName = 'HeaderContainer'
 
@@ -31,6 +35,14 @@ const Title = styled('span')`
 `
 Title.displayName = 'Title'
 
+const ResumeIcon = styled('a')`
+    svg {
+        height: 43px;
+        margin: 0 14px 18px 0;
+    }
+`
+ResumeIcon.displayName = 'ResumeIcon'
+
 const SocialLinks = styled('div')`
     svg {
     height: 50px;
@@ -40,15 +52,6 @@ const SocialLinks = styled('div')`
     }
 `
 SocialLinks.displayName = 'SocialLinks'
-
-const ResumeIcon = styled('a')`
-    svg {
-        height: 43px;
-        margin: 0 14px 18px 0;
-    }
-`
-ResumeIcon.displayName = 'ResumeIcon'
-
 
 const Header = () => {
     return (
