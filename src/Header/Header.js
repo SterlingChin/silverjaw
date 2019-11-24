@@ -44,8 +44,10 @@ const ResumeIcon = styled('a')`
 ResumeIcon.displayName = 'ResumeIcon'
 
 const SocialLinks = styled('div')`
+    display: ${({isMobile}) => isMobile ? 'flex' : 'block' };
+    justify-content: center;
     svg {
-    height: 50px;
+    height: ${({isMobile}) => isMobile ? '36px' : '50px' };
     margin: 15px;
     fill: #000000;
     filter: drop-shadow(0 1px 2px rgba(0, 35, 64, 0.32));
@@ -57,14 +59,7 @@ const Header = () => {
     return (
         <HeaderContainer isMobile={isMobile}>
             <Title mobile={isMobile}>Sterling Chin</Title>
-            <SocialLinks className="social" >
-                <ResumeIcon
-                    href={socialLinks.resume}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                >
-                    <Resume />
-                </ResumeIcon>
+            <SocialLinks isMobile={isMobile}>
                 <a
                     href={socialLinks.twitter}
                     rel="noopener noreferrer"
