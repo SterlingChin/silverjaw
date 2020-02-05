@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled'
-import { COLORS, CONTAINERS } from '../utils/constants'
-import { Resume } from '../Images/Resume';
+import { COLORS, CONTAINERS, SOCIAL_LINKS } from '../utils/constants'
 import { TwitterSvg } from '../Images/TwitterSvg';
 import { GithubSvg } from '../Images/GithubSvg';
 import { LinkedInSvg } from '../Images/LinkedInSvg';
@@ -9,14 +8,6 @@ import { EmailSvg } from '../Images/EmailSvg';
 import { isMobile } from '../utils/Browsers';
 
 const { HEADER } = CONTAINERS
-
-const socialLinks = {
-    resume: 'https://drive.google.com/file/d/1zzO7s2kteazY5E3R3Xzo_5a8G7E_0--6/view',
-    twitter: 'https://twitter.com/SilverJaw82',
-    github: 'https://github.com/SterlingChin',
-    linkedIn: 'https://www.linkedin.com/in/sterlingchin/',
-    email: 'mailto:sterling.chin@gmail.com',
-}
 
 const HeaderContainer = styled('div')`
     height: ${({isMobile}) => isMobile ? HEADER.MOBILE : HEADER.DESKTOP};
@@ -55,37 +46,31 @@ const SocialLinks = styled('div')`
 `
 SocialLinks.displayName = 'SocialLinks'
 
+const getIcon = name => {
+    switch (name) {
+        case 'TWITTER':
+            return <TwitterSvg />;
+        case 'GITHUB':
+            return <GithubSvg />;
+        case 'LINKED_IN':
+            return <LinkedInSvg />;
+        default:
+            return <EmailSvg />
+    }
+}
+
 const Header = () => {
     return (
         <HeaderContainer isMobile={isMobile}>
             <Title mobile={isMobile}>Sterling Chin</Title>
             <SocialLinks isMobile={isMobile}>
-                <a
-                    href={socialLinks.twitter}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                >
-                    <TwitterSvg />
-                </a>
-                <a
-                    href={socialLinks.github}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                >
-                    <GithubSvg />
-                </a>
-                <a
-                    href={socialLinks.linkedIn}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                >
-                    <LinkedInSvg />
-                </a>
-                <a
-                    href={socialLinks.email}
-                >
-                    <EmailSvg />
-                </a>
+                {Object.keys(SOCIAL_LINKS).map(link =>
+                    <a
+                        href={SOCIAL_LINKS[link]}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >{getIcon(link)}</a>
+                )}
             </SocialLinks>
         </HeaderContainer>
     )

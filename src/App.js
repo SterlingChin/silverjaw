@@ -27,31 +27,31 @@ BodyContainer.displayName = 'BodyContainer'
 
 
 const BodyItem = styled('div')`
-  display: flex;
-  width: ${({isMobile}) => isMobile ? '100vw' :'900px'};
-  margin: 0 auto 15px;
-  height: auto;
+    display: flex;
+    width: ${({isMobile}) => isMobile ? '100vw' :'900px'};
+    margin: 0 auto 15px;
+    height: auto;
 `
 BodyItem.displayName = 'BodyItem'
 
 
 class App extends Component {
-  render() {
-    return (
-      <AppContainer>
-        <Header />
-        <BodyContainer>
-          <BodyItem isMobile={isMobile}>
-            <SoftwareEngineer />
-          </BodyItem>
-          <BodyItem isMobile={isMobile}>
-            <About />
-          </BodyItem>
-        </BodyContainer>
-        <Footer />
-      </AppContainer>
-    );
-  }
+    render() {
+        return (
+            <AppContainer>
+                <Header />
+                <BodyContainer>
+                    <BodyItem isMobile={isMobile}>
+                    <SoftwareEngineer />
+                    </BodyItem>
+                    <BodyItem isMobile={isMobile}>
+                    <About />
+                    </BodyItem>
+                </BodyContainer>
+                <Footer />
+            </AppContainer>
+        );
+    }
 }
 
 export default App;

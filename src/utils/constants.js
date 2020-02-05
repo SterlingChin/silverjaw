@@ -19,3 +19,10 @@ export const CONTAINERS = {
         DESKTOP: '50px',
     }
 }
+
+export const SOCIAL_LINKS = {
+    TWITTER: 'https://twitter.com/SilverJaw82',
+    GITHUB: 'https://github.com/SterlingChin',
+    LINKED_IN: 'https://www.linkedin.com/in/sterlingchin/',
+    EMAIL: 'mailto:sterling.chin@gmail.com',
+}
